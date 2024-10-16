@@ -13,7 +13,9 @@ userRegistrationForm.addEventListener("submit", (event)=>{
   const photoLink = document.getElementById('photoLink').value;
   const comments = document.getElementById('comments').value;
 
-  fetch('http://localhost:3000/users', {
+  const api_Url =  `https://care-connect-server.onrender.com/users` //render.com api endpoint
+  const api_Url2 = `http://localhost:3000/users`
+  fetch(`${api_Url}`, {
     method: 'POST',
   body: JSON.stringify({
     firstName: firstName,
@@ -48,7 +50,7 @@ const updateForm = document.getElementById('updateForm');
 
 // Fetch users and display them
 function fetchUsers() {
-    fetch('http://localhost:3000/users')
+    fetch(`${api_Url}`)
         .then(response => response.json())
         .then(data => {
             userList.innerHTML = '';
@@ -65,7 +67,7 @@ function fetchUsers() {
 
 // Open modal and populate form
 function openModal(userId, firstName, lastName) {
-  fetch(`http://localhost:3000/users/${userId}`)
+  fetch(`${api_Url}/${userId}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('userId').value = userId;
@@ -97,7 +99,7 @@ updateForm.onsubmit = function(event) {
   event.preventDefault();
   const userId = document.getElementById('userId').value;
   
-  fetch(`http://localhost:3000/users/${userId}`, {
+  fetch(`${api_Url}/${userId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
