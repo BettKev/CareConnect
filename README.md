@@ -39,7 +39,7 @@ git clone https://github.com/BettKev/CareConnect.git
 ```
 2. Navigate into the project directory:
 ```
-cd careConnect
+cd CareConnect
 ```
 3. Install dependencies:
 ```
