@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "4d45",
+      "firstName": "John",
+      "lastName": "Doe",
+      "idNumber": "45324535",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "Kericho",
+      "disabilityType": "afdsf",
+      "coordinates": "0.52376513, 5.78268712",
+      "photoLink": "https://www.facebook.com",
+      "comments": "Well versed in English"
+    },
+    {
+      "id": "70b3",
+      "firstName": "John",
+      "lastName": "Doe",
+      "idNumber": "45324535",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "Kericho",
+      "disabilityType": "afdsf",
+      "coordinates": "0.52376513, 5.78268712",
+      "photoLink": "https://www.facebook.com",
+      "comments": "Well versed in English"
+    },
+    {
+      "id": "046d",
+      "firstName": "Kevin",
+      "lastName": "Bett",
+      "idNumber": "345345",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "hgj",
+      "disabilityType": "hjg",
+      "coordinates": "0.52376513, 5.78268712",
+      "photoLink": "https://www.facebook.com",
+      "comments": "xgfhjkjgfhg"
+    },
+    {
+      "id": "e573",
+      "firstName": "jhagsxsshg",
+      "lastName": "xcgvbcbxv",
+      "idNumber": "6521473412",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "jhghj",
+      "disabilityType": "jhfhff",
+      "coordinates": "0.979213, 9.6573542",
+      "photoLink": "https://www.facebook.com",
+      "comments": "dfghjkjgfhdgfsghj"
+    },
+    {
+      "id": "7a43",
+      "firstName": "hgfhgs",
+      "lastName": "gfgfgh",
+      "idNumber": "123456",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "zxcvb",
+      "disabilityType": "ghrg",
+      "coordinates": "0.979213, 9.6573542",
+      "photoLink": "https://www.facebook.com",
+      "comments": "fxcvnhgfbv bnhgfbvnhmgdfvcbnhgfdcvxbnhgdfvcbn vbgfgdvxc bvngfd"
+    }
+  ]
+}

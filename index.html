@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect</title>
+  <link 
+    href="./node_modules/bootstrap/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script 
+    src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script defer src="script.js"></script>
+</head>
+<body></body>
+
+<!-- Heding section -->
+  <div class="container">
+    <p class="text-center">
+      <strong>
+        <span style="color: red; font-size: 5em;">Care</span>
+        <span style="color: green; font-size: 5em;">Connect</span>
+      </strong>
+    </p>
+
+    <!-- This form handles user registration. User enters data which is parsed to the server and saved for future reference -->
+    <form id="userForm" class="card p-4 shadow-sm">
+      <h2 class="text-center">Enter user details to register</h2><br>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" id="lastName" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="idNumber" class="form-label">ID Number</label>
+          <input type="text" id="idNumber" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="countryOfBirth" class="form-label">Country of Birth</label>
+          <input type="text" id="countryOfBirth" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="countyOfBirth" class="form-label">County of Birth</label>
+          <input type="text" id="countyOfBirth" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="disabilityType" class="form-label">Disability Type</label>
+          <input type="text" id="disabilityType" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="coordinates" class="form-label">Map Coordinates</label>
+          <input type="text" id="coordinates" class="form-control">
+        </div>
+        <div class="col-md-6">
+          <label for="photoLink" class="form-label">Photo Link</label>
+          <input type="url" id="photoLink" class="form-control">
+        </div>
+        <div class="col-12">
+          <label for="comments" class="form-label">Comments</label>
+          <textarea id="comments" class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <div id="message" class="text-success" role="alert">
+        <!-- This is where the success message will be displayed -->
+ </div>
+
+      <button type="submit" id="createBtn" class="btn btn-primary mt-3 w-100">Register User</button>
+    </form>
+
+    <ul id="userList" class="list-group mt-5"></ul>
+  </div>
+
+  <!-- This modal handles the user update functionality-->
+  <div class="modal fade" id="updateUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update User Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="updateForm">
+            <div class="mb-3">
+              <label for="updateFirstName" class="form-label">First Name</label>
+              <input type="text" id="updateFirstName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateLastName" class="form-label">Last Name</label>
+              <input type="text" id="updateLastName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateIdNumber" class="form-label">ID Number</label>
+              <input type="text" id="updateIdNumber" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateCountryOfBirth" class="form-label">Country of Birth</label>
+              <input type="text" id="updateCountryOfBirth" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateCountyOfBirth" class="form-label">County of Birth</label>
+              <input type="text" id="updateCountyOfBirth" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateDisabilityType" class="form-label">Disability Type</label>
+              <input type="text" id="updateDisabilityType" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="updateCoordinates" class="form-label">Map Coordinates</label>
+              <input type="text" id="updateCoordinates" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="updatePhotoLink" class="form-label">Photo Link</label>
+              <input type="url" id="updatePhotoLink" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="updateComments" class="form-label">Comments</label>
+              <textarea id="updateComments" class="form-control" rows="3"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="saveChangesBtn" class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
