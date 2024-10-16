@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "b594",
+      "firstName": "Kevin",
+      "lastName": "gfgfgh",
+      "idNumber": "2435552412",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "hjgh",
+      "disabilityType": "hghj",
+      "coordinates": "www.youtube.com",
+      "photoLink": "https://www.facebook.com",
+      "comments": "hghasfdhdfj"
+    },
+    {
+      "id": "b9fd",
+      "firstName": "Kevin",
+      "lastName": "Bett",
+      "idNumber": "2435552412",
+      "countryOfBirth": "Kenya",
+      "countyOfBirth": "hgj",
+      "disabilityType": "jhfhff",
+      "coordinates": "0.52376513, 5.78268712",
+      "photoLink": "https://www.facebook.com",
+      "comments": "jhgvghjagsdjs"
+    }
+  ]
+}
