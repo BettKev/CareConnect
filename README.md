@@ -20,15 +20,15 @@ User-friendly interface with accessible design.
 Responsive layout for mobile and desktop views.
 
 # Technologies Used
-HTML - Structure of the web application.
+- HTML - Structure of the web application.
 
-CSS - Styling and layout.
+- CSS - Styling and layout.
 
-JavaScript - Interactivity and data handling.
+- JavaScript - Interactivity and data handling.
 
-Bootstrap - Front-end development.
+- Bootstrap - Front-end development.
 
-API - Fetching and managing data (if applicable).
+- API - Fetching and managing data (if applicable).
 
 # Installation
 To set up the CareConnect front end on your local machine, follow these steps:
@@ -54,11 +54,11 @@ npm start
 Note: This project utilizes a render.com hosted node server. You can access the API endpoint at https://care-connect-server.onrender.com/users to get user data. We have set the render.com server as default.
 
 # Usage
-Upon launching the application, you can register a new user by filling out the registration form.  
+- Upon launching the application, you can register a new user by filling out the registration form.  
 
-After registration, users can log in to access their profiles and monitor relevant data.
+- After registration, users can log in to access their profiles and monitor relevant data.
 
-Navigate through the different sections to manage and view information.
+- Navigate through the different sections to manage and view information.
 
 # Contributing
 Contributions are welcome! If you would like to contribute to CareConnect, please follow these steps:
