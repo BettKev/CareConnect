@@ -13,7 +13,7 @@ userRegistrationForm.addEventListener("submit", (event)=>{
   const photoLink = document.getElementById('photoLink').value;
   const comments = document.getElementById('comments').value;
 
-  fetch('http://localhost:3000/users', {
+  fetch('https://care-connect-server.onrender.com/users', {
     method: 'POST',
   body: JSON.stringify({
     firstName: firstName,
