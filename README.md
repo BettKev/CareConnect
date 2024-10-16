@@ -3,24 +3,31 @@
 CareConnect is a web application designed to register and monitor Persons with Disabilities (PWD). This application provides a user-friendly interface for tracking and managing data related to PWD, ensuring accessibility and inclusivity.
 
 # Table of Contents
-Features
-Technologies Used
-Installation
-Usage
-Contributing
-License
+1. Features
+2. Technologies Used
+3. Installation
+4. Usage
+5. Contributing
+6. License
 
 # Features
 User registration for Persons with Disabilities.
+
 Monitoring capabilities for tracking health and social data.
+
 User-friendly interface with accessible design.
+
 Responsive layout for mobile and desktop views.
 
 # Technologies Used
 HTML - Structure of the web application.
+
 CSS - Styling and layout.
+
 JavaScript - Interactivity and data handling.
-React (or any other framework/library you are using) - Front-end development.
+
+Bootstrap - Front-end development.
+
 API - Fetching and managing data (if applicable).
 
 # Installation
@@ -28,33 +35,29 @@ To set up the CareConnect front end on your local machine, follow these steps:
 
 1. Clone the repository:
 ```
-bash
-Copy code
-git clone https://github.com/yourusername/careconnect-frontend.git
+git clone https://github.com/BettKev/CareConnect.git
 ```
 2. Navigate into the project directory:
 ```
-bash
-Copy code
 cd careConnect
 ```
 3. Install dependencies:
 ```
-bash
-Copy code
 npm install
 ```
 4. Start the development server:
 ```
-bash
-Copy code
 npm start
 ```
-5. Open your web browser and go to http://localhost:3000 to view the application.
+5. Open your web browser and go to http://localhost:3000 to view the application when running db.json server locally.
+
+Note: This project utilizes a render.com hosted node server. You can access the API endpoint at https://care-connect-server.onrender.com/users to get user data. We have set the render.com server as default.
 
 # Usage
-Upon launching the application, you can register a new user by filling out the registration form.
+Upon launching the application, you can register a new user by filling out the registration form.  
+
 After registration, users can log in to access their profiles and monitor relevant data.
+
 Navigate through the different sections to manage and view information.
 
 # Contributing
