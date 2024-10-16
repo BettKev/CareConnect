@@ -76,60 +76,63 @@
   </div>
 
   <!-- This modal handles the user update functionality-->
-  <div class="modal fade" id="updateUserModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Update User Information</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="updateForm">
-            <div class="mb-3">
-              <label for="updateFirstName" class="form-label">First Name</label>
-              <input type="text" id="updateFirstName" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateLastName" class="form-label">Last Name</label>
-              <input type="text" id="updateLastName" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateIdNumber" class="form-label">ID Number</label>
-              <input type="text" id="updateIdNumber" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateCountryOfBirth" class="form-label">Country of Birth</label>
-              <input type="text" id="updateCountryOfBirth" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateCountyOfBirth" class="form-label">County of Birth</label>
-              <input type="text" id="updateCountyOfBirth" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateDisabilityType" class="form-label">Disability Type</label>
-              <input type="text" id="updateDisabilityType" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label for="updateCoordinates" class="form-label">Map Coordinates</label>
-              <input type="text" id="updateCoordinates" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="updatePhotoLink" class="form-label">Photo Link</label>
-              <input type="url" id="updatePhotoLink" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label for="updateComments" class="form-label">Comments</label>
-              <textarea id="updateComments" class="form-control" rows="3"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" id="saveChangesBtn" class="btn btn-primary">Save Changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="userList" class="list-group mt-5"></div>
 
+  <!-- Update Modal -->
+<div id="updateModalContent">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 class="text-center">Update User Information</h2>
+    <form id="updateForm" >
+      <div class="row g-3">
+        <div class="col-md-6">
+          <input type="hidden" id="userId" name="id">
+          <label class="form-label" for="firstName">First Name:</label>
+          <input class="form-control"  type="text" id="firstName" name="firstName" required>
+          </div>
+
+          <div class="col-md-6">
+          <label class="form-label" for="lastName">Last Name:</label>
+          <input class="form-control"  type="text" id="lastName" name="lastName" required>
+          </div>
+
+          <div class="col-md-6">
+          <label class="form-label" for="idNumber">ID Number:</label>
+          <input class="form-control"  type="text" id="idNumber" name="idNumber" required>
+          </div>
+
+          <div class="col-md-6">
+          <label class="form-label" for="countryOfBirth">Country of Birth:</label>
+          <input class="form-control"  type="text" id="countryOfBirth" name="countryOfBirth" required>
+          </div>
+
+          <div class="col-md-6">
+          <label class="form-label" for="countyOfBirth">County of Birth:</label>
+          <input class="form-control"  type="text" id="countyOfBirth" name="countyOfBirth" required>
+          </div>
+
+         <div class="col-md-6">
+          <label class="form-label" for="disabilityType">Disability Type:</label>
+          <input class="form-control"  type="text" id="disabilityType" name="disabilityType" required>
+           </div>
+
+          <div class="col-md-6">
+         <label class="form-label" for="coordinates">Map Coordinates:</label>
+         <input class="form-control"  type="text" id="coordinates" name="coordinates">
+          </div> 
+    
+          <div class="col-md-6">
+          <label class="form-label" for="photoLink">Photo Link:</label>
+         <input class="form-control"  type="url" id="photoLink" name="photoLink">
+         </div>
+         <div class="col-12">
+         <label class="form-label" for="comments">Comments:</label>
+          <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 w-100">Save</button>
+         </div>
+        </form>
+       </div>
+</div>
 </body>
 </html>
