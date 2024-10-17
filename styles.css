@@ -1,151 +1,30 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 900px; /* Increased width for side-by-side layout */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center; /* Center the title */
-}
-
-.flex-container {
-  display: flex;
-  gap: 20px; /* Space between form and table */
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Allow the form to take up remaining space */
-}
-
-input, textarea {
-  margin-bottom: 10px;
-  padding: 10px; /* Increased padding */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s; /* Transition for border color */
-}
-
-input:focus, textarea:focus {
-  border-color: #3498db; /* Highlight border on focus */
-  outline: none; /* Remove default outline */
-}
-
-button {
-  padding: 10px;
-  background-color: #3498db;
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s; /* Transition for button hover */
 }
 
-button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse; /* Remove space between borders */
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 12px; /* Increased padding for cells */
-  text-align: left;
-}
-
-th {
-  background-color: #3498db; /* Header background color */
-  color: white; /* Header text color */
-}
-
-tbody tr {
-  transition: background-color 0.3s; /* Transition for row hover */
-}
-
-tbody tr:hover {
-  background-color: #f2f2f2; /* Light gray on hover */
-}
-
-td a {
-  color: #3498db; /* Link color */
-  text-decoration: none; /* Remove underline from links */
-}
-
-td a:hover {
-  text-decoration: underline; /* Underline link on hover */
-}
-
-.actions {
-  display: flex;
-  gap: 5px; /* Space between action buttons */
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
-}
-
-.modal-content {
-  background-color: white;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  border-radius: 10px; /* Rounded corners */
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
+.sidebar a {
+  color: white;
   text-decoration: none;
-  cursor: pointer;
+  padding: 10px 20px;
+  display: block;
 }
 
-#modalUserTable {
-  width: 100%;
-  border-collapse: collapse; /* Remove space between borders */
+.sidebar a:hover {
+  background-color: #495057;
 }
 
-#modalUserTable th, #modalUserTable td {
-  border: 1px solid #ccc;
-  padding: 12px; /* Increased padding for cells */
-  text-align: left;
+.main-content {
+  flex: 1;
+  padding: 20px;
 }
 
-#modalUserTable th {
-  background-color: #3498db; /* Header background color */
-  color: white; /* Header text color */
-}
-
-#modalUserTable tbody tr:hover {
-  background-color: #f2f2f2; /* Light gray on hover */
+.btn-group {
+  margin-top: 10px;
 }
