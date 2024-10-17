@@ -76,6 +76,8 @@ h2, h4 {
 }
 
 .table {
+  width: 100%; /* Ensure the table takes full width of the modal */
+  table-layout: auto; /* Adjust table layout to prevent overflow */
   margin-top: 20px; /* Space above the table */
   border-collapse: collapse; /* Collapse borders for a cleaner look */
 }
@@ -84,6 +86,8 @@ h2, h4 {
   padding: 12px; /* Increase padding for table cells */
   text-align: left; /* Left align text for better readability */
   border-bottom: 1px solid #dee2e6; /* Add border between rows */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 .table th {
@@ -102,4 +106,11 @@ h2, h4 {
 
 .modal-body {
   padding: 20px; /* Padding for modal body */
+  background-image: url('./assets/landingpage.avif');
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+  max-height: 70vh; /* Prevent the modal from growing too large */
+}
+
+.modal-body .table {
+  margin-bottom: 0; /* Remove extra margin inside the modal */
 }
