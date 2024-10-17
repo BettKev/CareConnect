@@ -9,6 +9,7 @@ CareConnect is a web application designed to register and monitor Persons with D
 4. Usage
 5. Contributing
 6. License
+7. Resources
 
 # Features
 User registration for Persons with Disabilities.
@@ -71,3 +72,6 @@ Contributions are welcome! If you would like to contribute to CareConnect, pleas
 
 # License
 This project is licensed under the MIT License.
+
+## Resources
+- Visit my youtube channel to see a brieeeeeeeeeeeeeef explanation of how the app works https://youtu.be/AprTcPXRNDM 
