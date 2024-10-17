@@ -27,6 +27,7 @@ body {
   flex: 1;
   padding: 20px;
   overflow-y: auto; /* Allow scrolling in main content if needed */
+  background-image: url('./assets/landingpage.avif');
 }
 
 .right-sidebar {
