@@ -49,6 +49,7 @@ document.getElementById('userForm').addEventListener('submit', async (event) => 
         document.getElementById('userForm').reset();
         document.getElementById('userId').value = ''; 
         document.getElementById('saveChanges').style.display = 'none'; // Hide save changes button
+        document.getElementById('submitButton').style.display = 'block'; // Show register user button
     } catch (error) {
         console.error('Error:', error);
         alert('Failed to save user. Please try again.'); // Alert for errors
@@ -110,6 +111,45 @@ function editUser(id) {
 
     document.getElementById('userId').value = id; // Set user ID for PATCH request
     document.getElementById('saveChanges').style.display = 'block'; // Show save changes button
+    document.getElementById('submitButton').style.display = 'none'; // Hide register user button
+
+    // Rebind event listener for save changes button
+    document.getElementById('saveChanges').onclick = async () => {
+        const updatedUserData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            idNumber: document.getElementById('idNumber').value,
+            countryOfBirth: document.getElementById('countryOfBirth').value,
+            countyOfBirth: document.getElementById('countyOfBirth').value,
+            disabilityType: document.getElementById('disabilityType').value,
+            coordinates: document.getElementById('coordinates').value,
+            photoLink: document.getElementById('photoLink').value,
+            comments: document.getElementById('comments').value,
+        };
+
+        try {
+            const response = await fetch(`${API_URL}/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedUserData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            alert('User updated successfully!'); // Alert for successful update
+            document.getElementById('userForm').reset(); // Reset form
+            document.getElementById('userId').value = ''; 
+            document.getElementById('saveChanges').style.display = 'none'; // Hide save changes button
+            document.getElementById('submitButton').style.display = 'block'; // Show register user button
+        } catch (error) {
+            console.error('Error updating user:', error);
+            alert('Failed to update user. Please try again.'); // Alert for errors
+        }
+    };
 }
 
 // Function to delete user

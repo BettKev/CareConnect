@@ -1,30 +1,104 @@
 body {
   display: flex;
   height: 100vh;
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a clean font */
 }
 
-.sidebar {
+.sidebar, .right-sidebar {
   width: 250px;
-  background-color: #343a40;
+  background-color: #343a40; /* Dark background for sidebars */
   color: white;
 }
 
 .sidebar a {
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 15px 20px; /* Increased padding for better touch targets */
   display: block;
+  transition: background-color 0.3s; /* Smooth transition for hover effects */
 }
 
 .sidebar a:hover {
-  background-color: #495057;
+  background-color: #495057; /* Darker hover effect */
 }
 
 .main-content {
   flex: 1;
   padding: 20px;
+  overflow-y: auto; /* Allow scrolling in main content if needed */
+}
+
+.right-sidebar {
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 20px;
+  border-left: 1px solid #dee2e6; /* Border for separation */
+  color: #343a40; /* Dark text for readability */
+  display: flex; /* Flex layout for positioning */
+  flex-direction: column; /* Column layout to push copyright to the bottom */
+  height: 100%; /* Ensure the sidebar takes the full height */
+}
+
+.right-sidebar h4 {
+  margin-bottom: 15px; /* Space between heading and content */
+}
+
+.right-sidebar p {
+  margin-top: auto; /* Push the copyright to the bottom */
+  text-align: center; /* Center align copyright text */
+}
+
+h2, h4 {
+  color: #343a40; /* Dark color for headings */
+}
+
+#userForm {
+  max-height: calc(100vh - 150px); /* Adjust max height to fit in the viewport */
+  overflow-y: auto; /* Allow scrolling if the form is too long */
+}
+
+.mb-3 {
+  margin-bottom: 15px; /* Increase bottom margin for better spacing */
+}
+
+.form-label {
+  font-weight: bold; /* Bold labels for better visibility */
+}
+
+.btn {
+  padding: 10px 15px; /* Larger buttons for better touch targets */
+  margin-top: 10px; /* Space above buttons */
 }
 
 .btn-group {
-  margin-top: 10px;
+  margin-top: 15px; /* Add margin to group buttons */
+}
+
+.table {
+  margin-top: 20px; /* Space above the table */
+  border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+.table th, .table td {
+  padding: 12px; /* Increase padding for table cells */
+  text-align: left; /* Left align text for better readability */
+  border-bottom: 1px solid #dee2e6; /* Add border between rows */
+}
+
+.table th {
+  background-color: #343a40; /* Dark header for the table */
+  color: white; /* White text for headers */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2; /* Alternate row color for readability */
+}
+
+.modal-header {
+  background-color: #343a40; /* Dark header for the modal */
+  color: white; /* White text for modal header */
+}
+
+.modal-body {
+  padding: 20px; /* Padding for modal body */
 }
