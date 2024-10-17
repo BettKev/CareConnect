@@ -3,76 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
+    <title>CRUD App with Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="form-container">
-            <h2>User Registration</h2>
-            <form id="userForm">
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Registration Form -->
+        <div class="col-md-5">
+            <h4 class="mb-4">User Registration</h4>
+            <form id="userForm" class="needs-validation" novalidate>
                 <input type="hidden" id="userId">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" required>
-
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" required>
-
-                <label for="idNumber">ID Number:</label>
-                <input type="text" id="idNumber" required>
-
-                <label for="countryOfBirth">Country of Birth:</label>
-                <input type="text" id="countryOfBirth" required>
-
-                <label for="countyOfBirth">County of Birth:</label>
-                <input type="text" id="countyOfBirth" required>
-
-                <label for="disabilityType">Disability Type:</label>
-                <input type="text" id="disabilityType" required>
-
-                <label for="coordinates">Coordinates:</label>
-                <input type="text" id="coordinates" required>
-
-                <label for="photoLink">Photo Link:</label>
-                <input type="url" id="photoLink" required>
-
-                <label for="comments">Comments:</label>
-                <textarea id="comments" required></textarea>
-
-                <button type="submit">Register User</button>
-                <button type="button" id="saveChanges" style="display:none;">Save Changes</button>
+                <div class="mb-3">
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="idNumber" class="form-control" placeholder="ID Number" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="countryOfBirth" class="form-control" placeholder="Country of Birth" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="countyOfBirth" class="form-control" placeholder="County of Birth" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="disabilityType" class="form-control" placeholder="Disability Type" required>
+                </div>
+                <div class="mb-3">
+                    <input type="url" id="coordinates" class="form-control" placeholder="Coordinates URL" required>
+                </div>
+                <div class="mb-3">
+                    <input type="url" id="photoLink" class="form-control" placeholder="Photo Link" required>
+                </div>
+                <div class="mb-3">
+                    <textarea id="comments" class="form-control" placeholder="Comments" rows="3"></textarea>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Register User</button>
+                    <button id="saveChanges" class="btn btn-success" style="display:none;">Save Changes</button>
+                    <button type="button" id="displayUserList" class="btn btn-secondary">Display User List</button>
+                </div>
             </form>
         </div>
 
-        <button id="displayUserList">Display User List</button>
-
-        <div id="userModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>User List</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>ID Number</th>
-                            <th>Country of Birth</th>
-                            <th>County of Birth</th>
-                            <th>Disability Type</th>
-                            <th>Coordinates</th>
-                            <th>Photo Link</th>
-                            <th>Comments</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="userList">
-                        <!-- User entries will be populated here -->
-                    </tbody>
-                </table>
+        <!-- Modal for User List -->
+        <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="userModalLabel">User List</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>ID Number</th>
+                                    <th>Country</th>
+                                    <th>County</th>
+                                    <th>Disability Type</th>
+                                    <th>Coordinates</th>
+                                    <th>Photo</th>
+                                    <th>Comments</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userList"></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
