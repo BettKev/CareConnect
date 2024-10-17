@@ -1,6 +1,7 @@
-// This section handles the user registration form it takes tttthe values entered in the form and passes them to the server
 const userRegistrationForm = document.querySelector('form#userForm');
-userRegistrationForm.addEventListener("submit", (event)=>{
+
+// Register user form submission logic
+userRegistrationForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const firstName = document.getElementById('firstName').value;
@@ -13,66 +14,83 @@ userRegistrationForm.addEventListener("submit", (event)=>{
   const photoLink = document.getElementById('photoLink').value;
   const comments = document.getElementById('comments').value;
 
-  const api_Url =  `https://care-connect-server.onrender.com/users` //render.com api endpoint
-  const api_Url2 = `http://localhost:3000/users`
-  fetch(`${api_Url}`, {
+  const api_Url = `https://care-connect-server.onrender.com/users`;
+
+  fetch(api_Url, {
     method: 'POST',
-  body: JSON.stringify({
-    firstName: firstName,
-    lastName: lastName,
-    idNumber: idNumber,
-    countryOfBirth: countryOfBirth,
-    countyOfBirth: countyOfBirth,
-    disabilityType: disabilityType,
-    coordinates: coordinates,
-    photoLink: photoLink,
-    comments: comments
-
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
+    body: JSON.stringify({
+      firstName,
+      lastName,
+      idNumber,
+      countryOfBirth,
+      countyOfBirth,
+      disabilityType,
+      coordinates,
+      photoLink,
+      comments,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
   })
-  .then((response) => response.json())
-        .then((res) => {
-          // const message = document.getElementById("message");
-          // message.innerText = "User Successfully registered";
-          alert("Registration Successfull")
-        });   
-})
-
-
-//Modal functionality section
-const userList = document.getElementById('userList');
-const modal = document.getElementById('updateModal');
-const closeModal = document.querySelector('.close');
-const updateForm = document.getElementById('updateForm');
+    .then((response) => response.json())
+    .then(() => {
+      alert("Registration Successful");
+      userRegistrationForm.reset(); // Reset the form after submission
+      fetchUsers(); // Refresh user list
+    })
+    .catch((error) => console.error("Error:", error));
+});
 
 // Fetch users and display them
 function fetchUsers() {
-    fetch(`${api_Url}`)
-        .then(response => response.json())
-        .then(data => {
-            userList.innerHTML = '';
-            data.forEach(user => {
-                const userDiv = document.createElement('div');
-                userDiv.innerHTML = `
-                    <p>${user.name} - ${user.email}</p>
-                    <button onclick="openModal(${user.id}, '${user.name}', '${user.email}')">Update</button>
-                `;
-                userList.appendChild(userDiv);
-            });
-        });
+  const userList = document.getElementById('userList');
+  fetch(`https://care-connect-server.onrender.com/users`)
+    .then((response) => response.json())
+    .then((data) => {
+      userList.innerHTML = ''; // Clear previous list
+      data.forEach((user) => {
+        const userDiv = document.createElement('div');
+        userDiv.innerHTML = `
+          <p>${user.firstName} ${user.lastName} - ID: ${user.idNumber}</p>
+          <button onclick="openModal(${user.id})">Update</button>
+        `;
+        userList.appendChild(userDiv);
+      });
+    })
+    .catch((error) => console.error('Error fetching users:', error));
 }
 
-// Open modal and populate form
-function openModal(userId, firstName, lastName) {
-  fetch(`${api_Url}/${userId}`)
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('userId').value = userId;
-      document.getElementById('firstName').value = firstName;
-      document.getElementById('lastName').value = lastName;
+// Modal handling logic
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn");
+const span = document.getElementsByClassName("close")[0];
+
+// Open the modal when the button is clicked
+btn.onclick = () => {
+  modal.style.display = "block";
+};
+
+// Close the modal when the user clicks the close button
+span.onclick = () => {
+  modal.style.display = "none";
+};
+
+// Close the modal when the user clicks outside the modal
+window.onclick = (event) => {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+// Open modal and populate form with user details
+function openModal(userId) {
+  const modal = document.getElementById('myModal');
+  fetch(`https://care-connect-server.onrender.com/users/${userId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById('userId').value = data.id;
+      document.getElementById('firstName').value = data.firstName;
+      document.getElementById('lastName').value = data.lastName;
       document.getElementById('idNumber').value = data.idNumber;
       document.getElementById('countryOfBirth').value = data.countryOfBirth;
       document.getElementById('countyOfBirth').value = data.countyOfBirth;
@@ -80,53 +98,46 @@ function openModal(userId, firstName, lastName) {
       document.getElementById('coordinates').value = data.coordinates;
       document.getElementById('photoLink').value = data.photoLink;
       document.getElementById('comments').value = data.comments;
+      consssssole.log('')
       modal.style.display = 'block';
-    });
-}
-// Close modal
-closeModal.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+    })
+    .catch((error) => console.error('Error fetching user details:', error));
 }
 
 // Update user information
-updateForm.onsubmit = function(event) {
+const updateForm = document.getElementById('updateForm');
+updateForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const userId = document.getElementById('userId').value;
-  
-  fetch(`${api_Url}/${userId}`, {
+
+  fetch(`https://care-connect-server.onrender.com/users/${userId}`, {
     method: 'PATCH',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      firstName: document.querySelector(`input[name="firstName"]`).value,
-      lastName: document.querySelector(`input[name="lastName"]`).value,
-      idNumber: document.querySelector(`input[name="idNumber"]`).value,
-      countryOfBirth: document.querySelector(`input[name="countryOfBirth"]`).value,
-      countyOfBirth: document.querySelector(`input[name="countyOfBirth"]`).value,
-      disabilityType: document.querySelector(`input[name="disabilityType"]`).value,
-      coordinates: document.querySelector(`input[name="coordinates"]`).value,
-      photoLink: document.querySelector(`input[name="photoLink"]`).value,
-      comments: document.querySelector(`textarea[name="comments"]`).value
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      idNumber: document.getElementById('idNumber').value,
+      countryOfBirth: document.getElementById('countryOfBirth').value,
+      countyOfBirth: document.getElementById('countyOfBirth').value,
+      disabilityType: document.getElementById('disabilityType').value,
+      coordinates: document.getElementById('coordinates').value,
+      photoLink: document.getElementById('photoLink').value,
+      comments: document.getElementById('comments').value,
+    }),
+  })
+    .then((response) => response.json())
+    .then(() => {
+      alert('User successfully updated!');
+      fetchUsers(); // Refresh the user list
+      modal.style.display = 'none';
     })
-  })
-  .then(response => response.json())
-  .then(data => {
-    fetchUsers();
-    modal.style.display = 'none';
-    document.getElementById('message').innerText = 'User successfully updated!';
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    document.getElementById('message').innerText = 'Failed to update user. Please try again.';
-  });
-}
+    .catch((error) => {
+      console.error('Error updating user:', error);
+      alert('Failed to update user. Please try again.');
+    });
+});
 
 // Initial fetch of users
 fetchUsers();

@@ -13,7 +13,12 @@
   </script>
   <script defer src="script.js"></script>
 </head>
-<body></body>
+<body>
+<navbar class="col-12 bg-white">
+      <a href="#">Home</a>
+      <a href="./about_us.html">About Us</a>
+ 
+</navbar>
 
 <!-- Heding section -->
   <div class="container">
@@ -76,63 +81,83 @@
   </div>
 
   <!-- This modal handles the user update functionality-->
-  <div id="userList" class="list-group mt-5"></div>
 
-  <!-- Update Modal -->
-<div id="updateModalContent">
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Update User Information</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2 class="text-center">Update User Information</h2>
-    <form id="updateForm" >
-      <div class="row g-3">
-        <div class="col-md-6">
-          <input type="hidden" id="userId" name="id">
-          <label class="form-label" for="firstName">First Name:</label>
-          <input class="form-control"  type="text" id="firstName" name="firstName" required>
-          </div>
-
-          <div class="col-md-6">
-          <label class="form-label" for="lastName">Last Name:</label>
-          <input class="form-control"  type="text" id="lastName" name="lastName" required>
-          </div>
-
-          <div class="col-md-6">
-          <label class="form-label" for="idNumber">ID Number:</label>
-          <input class="form-control"  type="text" id="idNumber" name="idNumber" required>
-          </div>
-
-          <div class="col-md-6">
-          <label class="form-label" for="countryOfBirth">Country of Birth:</label>
-          <input class="form-control"  type="text" id="countryOfBirth" name="countryOfBirth" required>
-          </div>
-
-          <div class="col-md-6">
-          <label class="form-label" for="countyOfBirth">County of Birth:</label>
-          <input class="form-control"  type="text" id="countyOfBirth" name="countyOfBirth" required>
-          </div>
-
-         <div class="col-md-6">
-          <label class="form-label" for="disabilityType">Disability Type:</label>
-          <input class="form-control"  type="text" id="disabilityType" name="disabilityType" required>
-           </div>
-
-          <div class="col-md-6">
-         <label class="form-label" for="coordinates">Map Coordinates:</label>
-         <input class="form-control"  type="text" id="coordinates" name="coordinates">
-          </div> 
+    <div id="updateModalContent">
+        <form id="updateForm" >
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="hidden" id="userId" name="id">
+              <label class="form-label" for="firstName">First Name:</label>
+              <input class="form-control"  type="text" id="firstName" name="firstName" required>
+              </div>
     
-          <div class="col-md-6">
-          <label class="form-label" for="photoLink">Photo Link:</label>
-         <input class="form-control"  type="url" id="photoLink" name="photoLink">
-         </div>
-         <div class="col-12">
-         <label class="form-label" for="comments">Comments:</label>
-          <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3 w-100">Save</button>
-         </div>
-        </form>
-       </div>
+              <div class="col-md-6">
+              <label class="form-label" for="lastName">Last Name:</label>
+              <input class="form-control"  type="text" id="lastName" name="lastName" required>
+              </div>
+    
+              <div class="col-md-6">
+              <label class="form-label" for="idNumber">ID Number:</label>
+              <input class="form-control"  type="text" id="idNumber" name="idNumber" required>
+              </div>
+    
+              <div class="col-md-6">
+              <label class="form-label" for="countryOfBirth">Country of Birth:</label>
+              <input class="form-control"  type="text" id="countryOfBirth" name="countryOfBirth" required>
+              </div>
+    
+              <div class="col-md-6">
+              <label class="form-label" for="countyOfBirth">County of Birth:</label>
+              <input class="form-control"  type="text" id="countyOfBirth" name="countyOfBirth" required>
+              </div>
+    
+             <div class="col-md-6">
+              <label class="form-label" for="disabilityType">Disability Type:</label>
+              <input class="form-control"  type="text" id="disabilityType" name="disabilityType" required>
+               </div>
+    
+              <div class="col-md-6">
+             <label class="form-label" for="coordinates">Map Coordinates:</label>
+             <input class="form-control"  type="text" id="coordinates" name="coordinates">
+              </div> 
+        
+              <div class="col-md-6">
+              <label class="form-label" for="photoLink">Photo Link:</label>
+             <input class="form-control"  type="url" id="photoLink" name="photoLink">
+             </div>
+             <div class="col-12">
+             <label class="form-label" for="comments">Comments:</label>
+              <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3 w-100">Save</button>
+             </div>
+            </form>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="userList" class="list-group mt-5"></div>
+
+  <!-- Update Modal -->
+
 </body>
 </html>
