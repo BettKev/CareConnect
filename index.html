@@ -3,89 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD App with Bootstrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     <!-- Switched to bootstrap      -->
+    <title>User Registration App</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
-    <div class="row">
-        <!-- Registration Form -->
-        <div class="col-md-5">
-            <h4 class="mb-4">User Registration</h4>
-            <form id="userForm" class="needs-validation" novalidate>
-                <input type="hidden" id="userId">
-                <div class="mb-3">
-                    <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" id="idNumber" class="form-control" placeholder="ID Number" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" id="countryOfBirth" class="form-control" placeholder="Country of Birth" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" id="countyOfBirth" class="form-control" placeholder="County of Birth" required>
-                </div>
-                <div class="mb-3">
-                    <input type="text" id="disabilityType" class="form-control" placeholder="Disability Type" required>
-                </div>
-                <div class="mb-3">
-                    <input type="url" id="coordinates" class="form-control" placeholder="Coordinates URL" required>
-                </div>
-                <div class="mb-3">
-                    <input type="url" id="photoLink" class="form-control" placeholder="Photo Link" required>
-                </div>
-                <div class="mb-3">
-                    <textarea id="comments" class="form-control" placeholder="Comments" rows="3"></textarea>
-                </div>
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">Register User</button>
-                    <button id="saveChanges" class="btn btn-success" style="display:none;">Save Changes</button>
-                    <button type="button" id="displayUserList" class="btn btn-secondary">Display User List</button>
-                </div>
-            </form>
-        </div>
+    <!-- Sidebar Menu -->
+    <div class="sidebar">
+        <h3 class="text-center py-3">CareConnect<h3>
+        <a href="#" id="nav-home">Home</a>
+        <a href="#" id="nav-registration">User Registration</a>
+        <a href="#" id="nav-users">User List</a>
+    </div>
 
-        <!-- Modal for User List -->
-        <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="userModalLabel">User List</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table table-striped table-hover">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>ID Number</th>
-                                    <th>Country</th>
-                                    <th>County</th>
-                                    <th>Disability Type</th>
-                                    <th>Coordinates</th>
-                                    <th>Photo</th>
-                                    <th>Comments</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="userList"></tbody>
-                        </table>
-                    </div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>User Registration</h2>
+
+        <!-- User Form -->
+        <form id="userForm">
+            <input type="hidden" id="userId">
+
+            <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="idNumber" class="form-label">ID Number</label>
+                <input type="text" class="form-control" id="idNumber" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="countryOfBirth" class="form-label">Country of Birth</label>
+                <input type="text" class="form-control" id="countryOfBirth">
+            </div>
+
+            <div class="mb-3">
+                <label for="countyOfBirth" class="form-label">County of Birth</label>
+                <input type="text" class="form-control" id="countyOfBirth">
+            </div>
+
+            <div class="mb-3">
+                <label for="disabilityType" class="form-label">Disability Type</label>
+                <input type="text" class="form-control" id="disabilityType">
+            </div>
+
+            <div class="mb-3">
+                <label for="coordinates" class="form-label">Coordinates Link</label>
+                <input type="url" class="form-control" id="coordinates">
+            </div>
+
+            <div class="mb-3">
+                <label for="photoLink" class="form-label">Photo Link</label>
+                <input type="url" class="form-control" id="photoLink">
+            </div>
+
+            <div class="mb-3">
+                <label for="comments" class="form-label">Comments</label>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" id="submitButton" class="btn btn-primary me-2">Register User</button>
+                <button type="button" id="saveChanges" class="btn btn-success me-2" style="display: none;">Save Changes</button>
+                <button type="button" id="displayUserList" class="btn btn-secondary">Display User List</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- User List Modal -->
+    <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userModalLabel">User List</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>ID Number</th>
+                                <th>Country</th>
+                                <th>County</th>
+                                <th>Disability Type</th>
+                                <th>Coordinates</th>
+                                <th>Photo Link</th>
+                                <th>Comments</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userList"></tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
