@@ -74,6 +74,7 @@ Contributions are welcome! If you would like to contribute to CareConnect, pleas
 This project is licensed under the MIT License.
 
 ## Resources
-- Visit my youtube channel to see a brief explanation of how the app works. This is the latest version with an improved user interface https://youtu.be/7-HA-eS3l0I
+- Visit my youtube channel to see a brief explanation of how the app works. This is the latest version with an improved user interface (https://youtu.be/7-HA-eS3l0I)
 - Backend endpoints (https://care-connect-server.onrender.com/users)
 - Front end (https://bettkev.github.io/CareConnect/)
+- Figma design (https://www.figma.com/design/glXKOfJVI4qDuUyE75GVrM/CareConnect-MVP?node-id=0-1&t=KxEchQ7RTqhVcUQc-1)
